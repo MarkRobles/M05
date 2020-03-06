@@ -1,0 +1,26 @@
+﻿@model dynamic
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>DinamycView</title>
+</head>
+<body>
+    <div> 
+        Product name: @Model.ProductName<br />
+        Unit Price: @Model.UnitPrice<br />
+        Units In Stock: @Model.UnitsInStock<br />
+        @*Si la propiedad existe*@
+        @if (Model.GetType().GetProperty("ExternID")!=null)
+        {
+            @:Extern ID:  @Model.ExternID<br />
+
+        }
+    </div>
+</body>
+</html>
